@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ポモドーロ・タイマー (25 + 5)</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <h1>ポモドーロ・タイマー</h1>
+      <p class="app__subtitle">25分作業 + 5分休憩（電子音／画像・GIF表示）</p>
+    </header>
+
+    <section class="timer" aria-live="polite">
+      <div class="preset">
+        <button class="btn btn--ghost" data-preset="3">3分</button>
+        <button class="btn btn--ghost" data-preset="5">5分</button>
+        <button class="btn btn--ghost" data-preset="25-5">25+5（ポモ）</button>
+      </div>
+      <div class="meta">
+        <label>
+          目的
+          <select id="purposeSelect">
+            <option value="">未選択</option>
+            <option value="ダラダラタイム">ダラダラタイム</option>
+            <option value="自己研鑽">自己研鑽</option>
+            <option value="タイマー">タイマー</option>
+          </select>
+        </label>
+        <label class="meta__note">
+          備考
+          <input id="noteInput" type="text" placeholder="メモ（任意）" />
+        </label>
+      </div>
+      <div class="timer__phase" id="phaseLabel">作業中</div>
+      <div class="timer__display" id="timeDisplay">25:00</div>
+      <div class="timer__controls">
+        <button id="startPauseBtn" class="btn btn--primary">スタート</button>
+        <button id="resetBtn" class="btn">リセット</button>
+      </div>
+      <div class="timer__hint">自動で「作業 → 休憩」の順に1サイクル。終了後に停止します。</div>
+    </section>
+
+    <section class="media">
+      <h2 class="media__title">カウントダウン中の画像／GIF</h2>
+      <div class="media__preview" id="imagePreview">
+        <span class="media__placeholder">画像が未設定です</span>
+      </div>
+      <div class="media__controls">
+        <input id="imageInput" type="file" accept="image/*" multiple />
+        <button id="clearImageBtn" class="btn">画像を全てクリア</button>
+      </div>
+      <p class="media__note">選んだ画像はこのブラウザにのみ保存されます（ローカル保存）。いま <span id="imageCountLabel">0</span> 枚。</p>
+    </section>
+
+    <footer class="app__footer">
+      <small>v0.1 MVP — 将来: プリセット、Notion連携、iOS移植</small>
+    </footer>
+  </main>
+
+  <script src="./app.js"></script>
+  <noscript>JavaScriptを有効にしてください。</noscript>
+</body>
+</html>
+
+

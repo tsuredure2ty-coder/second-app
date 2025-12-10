@@ -1,0 +1,10 @@
+{
+  "name": "timer-pomodoro-web",
+  "version": "0.3.0",
+  "private": true,
+  "dependencies": {
+    "@notionhq/client": "^2.2.15"
+  }
+}
+
+
